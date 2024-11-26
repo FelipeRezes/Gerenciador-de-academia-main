@@ -1,8 +1,7 @@
 package model;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+
+import  java.time.LocalDate;
 
 
 public class Contrato {
@@ -11,22 +10,40 @@ public class Contrato {
     private PlanoAssinatura planoAssinatura;
     private LocalDate dataInicio;
     private LocalDate dataFim;
+    private LocalDate diaEscolhido;
 
     //private List<Observer> observers = new ArrayList<Observer>();
 
     // Construtor
-    public Contrato(Integer id, Integer alunoid, PlanoAssinatura planoAssinatura, LocalDate dataInicio, LocalDate dataFim) {
+    public Contrato() {
         this.id = id;
         this.alunoid = alunoid;
         this.planoAssinatura = planoAssinatura;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
+        this.diaEscolhido = diaEscolhido;
     }
 
+    
     public Contrato(LocalDate dataInicio) {
         this.dataInicio = dataInicio;
     }
 
+    public Contrato(LocalDate diaEscolhido,  boolean isDiaEscolhido) {
+        this.diaEscolhido = diaEscolhido;
+    }
+    
+    public static Contrato comDataInicio(LocalDate dataInicio) {
+        Contrato contrato = new Contrato();
+        contrato.dataInicio = dataInicio;
+        return contrato;
+    }
+
+    public static Contrato comDiaEscolhido(LocalDate diaEscolhido) {
+        Contrato contrato = new Contrato();
+        contrato.diaEscolhido = diaEscolhido;
+        return contrato;
+    }
 
     //Observer methods
 
@@ -90,6 +107,15 @@ public class Contrato {
         this.dataFim = dataFim;
     }
 
+    public LocalDate getDiaEscolhido() {
+        return diaEscolhido;
+    }
+
+    public void setDiaEscolhido(LocalDate diaEscolhido) {
+        this.diaEscolhido = diaEscolhido;
+    }
+
+
     @Override
     public String toString() {
         return "Contrato{" +
@@ -98,6 +124,9 @@ public class Contrato {
                ", planoAssinatura=" + planoAssinatura +
                ", dataInicio=" + dataInicio +
                ", dataFim=" + dataFim +
+               ", diaEscolhido=" +diaEscolhido +
                '}';
     }
+
+
 }

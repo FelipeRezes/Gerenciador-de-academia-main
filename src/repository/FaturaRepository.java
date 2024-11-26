@@ -31,6 +31,7 @@ public class FaturaRepository {
         this.FaturaId++;
         novoFatura.setId(this.FaturaId);
         Faturas.put(this.FaturaId, novoFatura);
+
         return novoFatura;
 
     }
@@ -42,7 +43,8 @@ public class FaturaRepository {
     }
 
     public void editar(Integer id){
-            
+        
+        
         // Implementar a lógica para editar um usuário
             
     }

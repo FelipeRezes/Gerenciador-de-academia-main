@@ -6,6 +6,7 @@ public class FichaFinanceira {
 
     Integer alunoId;
     LocalDate dataVencimento;
+    LocalDate novoVencimento;
     LocalDate dataFechamento = this.dataFechamento();
 
 
@@ -14,8 +15,8 @@ public class FichaFinanceira {
         if (dataVencimento == null) {
             throw new IllegalStateException("Data de vencimento não pode ser nula.");
         }
-        return dataVencimento.minusDays(7);
 
+        return dataVencimento;
     }
 
     

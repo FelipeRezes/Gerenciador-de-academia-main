@@ -1,5 +1,5 @@
 [
-    { "email": "ana.martins@example.com", "senha": "senha1" },
+    { "email": "ana.martins@example.com", "senha": "senha1"},
     { "email": "bruno.silva@example.com", "senha": "senha2" },
     { "email": "carla.oliveira@example.com", "senha": "senha3" },
     { "email": "daniel.santos@example.com", "senha": "senha4" },

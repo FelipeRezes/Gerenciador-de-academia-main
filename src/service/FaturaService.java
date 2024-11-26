@@ -5,23 +5,25 @@ import model.Fatura;
 
 public class FaturaService {
 
-        public Fatura criarFatura(LocalDate dataVencimento, Integer alunoId){
+    public boolean criarFatura(LocalDate dataVencimento, Integer alunoId, Integer diaEscolhido) {
+        LocalDate novoVencimento = dataVencimento.withDayOfMonth(1);
 
-            Fatura fatura = new Fatura(dataVencimento, dataVencimento, alunoId);
-            
-            
-            
-            
+      
+        if (diaEscolhido != null && diaEscolhido > 0 && diaEscolhido <= novoVencimento.lengthOfMonth()) {
+            novoVencimento = novoVencimento.withDayOfMonth(diaEscolhido);
+        } else {
+            throw new IllegalArgumentException("Dia escolhido inválido para o mês.");
         }
 
+        Fatura fatura = new Fatura(dataVencimento, novoVencimento, alunoId);
 
+        // Simula o retorno de criação da fatura (ajuste conforme necessário para lógica de persistência)
+        return true;
+    }
 
-        public static void dataPagamento(String[] args) {
-            LocalDate dataFechamento = LocalDate.of(2024, 11, 1);  
-            LocalDate dataVencimento = LocalDate.of(2024, 11, 7);   
-    
-            long diasEntre = contarDiasEntreDatas(dataFechamento, dataVencimento);
-        }
-
+    // Método utilitário para contar os dias entre duas datas
+    public long contarDiasEntreDatas(LocalDate dataInicial, LocalDate dataFinal) {
+        return java.time.temporal.ChronoUnit.DAYS.between(dataInicial, dataFinal);
+    }
     
 }

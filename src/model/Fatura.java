@@ -7,7 +7,9 @@ public class Fatura {
     Integer id;
     LocalDate dataFechamento;
     LocalDate dataVencimento;
+    LocalDate novoVencimento;
     Integer alunoId;
+    LocalDate diaEscolhido;
     //status
 
     
@@ -16,6 +18,8 @@ public class Fatura {
         this.dataFechamento = dataFechamento;
         this.dataVencimento = dataVencimento;
         this.alunoId = alunoId;
+        this.novoVencimento = novoVencimento;
+        this.diaEscolhido = diaEscolhido;
     }
     public Integer getId() {
         return id;
@@ -40,6 +44,22 @@ public class Fatura {
     }
     public void setAlunoId(Integer alunoId) {
         this.alunoId = alunoId;
+    }
+
+    public LocalDate getDiaEscolhido() {
+        return diaEscolhido;
+    }
+
+    public void setDiaEscolhido(LocalDate diaEscolhido) {
+        this.diaEscolhido = diaEscolhido;
+    }
+
+    public LocalDate getNovoVencimento() {
+        return novoVencimento;
+    }
+
+    public void setNovoVencimento(LocalDate novoVencimento) {
+        this.novoVencimento = novoVencimento;
     }
         
 
